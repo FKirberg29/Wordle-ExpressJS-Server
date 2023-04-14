@@ -9,8 +9,9 @@ const gameWords = ["books", "brown", "hello", "video", "water", "anger", "racer"
 
 // Define GET endpoint(s)
 app.get("/", (req:Request, res:Response) => {
-    let solutionWord = gameWords[Math.floor(Math.random() * gameWords.length)]
-    res.send({secret: solutionWord});
+    let solutionWordA = gameWords[Math.floor(Math.random() * gameWords.length)]
+    let solutionWordB = gameWords[Math.floor(Math.random() * gameWords.length)]
+    res.send({solutionA: solutionWordA, solutionB: solutionWordB});
 });
 
 app.listen(PORT, () => {
